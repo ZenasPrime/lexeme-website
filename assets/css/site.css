@@ -1,0 +1,154 @@
+/* Shared paper, walnut, typography, and spacing tokens inspired by Lexeme Help.
+   System fonts keep every page self-contained. */
+:root {
+    color-scheme: light dark;
+    --color-paper: #faf7f0;
+    --color-ink: #2c2823;
+    --color-muted: #6e655b;
+    --color-accent: #755033;
+    --color-rule: #d9cbb8;
+    --color-focus: #755033;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-heading: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+    --page-width: 48rem;
+    --page-gutter: 2rem;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-paper: #25221e;
+        --color-ink: #eee7dc;
+        --color-muted: #bdb1a1;
+        --color-accent: #d8b38e;
+        --color-rule: #554a3e;
+        --color-focus: #e7c49f;
+    }
+}
+* { box-sizing: border-box; }
+html { background: var(--color-paper); }
+body {
+    margin: 0;
+    color: var(--color-ink);
+    background: var(--color-paper);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+.page-width {
+    width: min(var(--page-width), calc(100% - var(--page-gutter) * 2));
+    margin-inline: auto;
+}
+a { color: var(--color-accent); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
+.skip-link {
+    position: absolute;
+    top: var(--space-2);
+    left: var(--page-gutter);
+    z-index: 1;
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-paper);
+    transform: translateY(-200%);
+}
+.skip-link:focus { transform: translateY(0); }
+/* The shared header uses native disclosure navigation; no menu script is needed. */
+.wide-width { width: min(72rem, calc(100% - var(--page-gutter) * 2)); margin-inline: auto; }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); padding-block: var(--space-2); border-bottom: 1px solid var(--color-rule); }
+.brand { display: inline-flex; align-items: center; gap: 0.625rem; color: var(--color-ink); font-size: 1.125rem; font-weight: 700; text-decoration: none; }
+.brand img { display: block; width: 2rem; height: auto; }
+.primary-nav { display: flex; align-items: center; gap: var(--space-3); font-size: 0.875rem; }
+.primary-nav > a { text-decoration: none; }
+.primary-nav > a:hover { text-decoration: underline; }
+.nav-menu { position: relative; }
+.nav-menu summary { display: flex; align-items: center; gap: var(--space-1); padding: 0.625rem 0.25rem; cursor: pointer; list-style: none; }
+.nav-menu summary::-webkit-details-marker { display: none; }
+.nav-menu[open] summary { color: var(--color-accent); }
+.nav-menu ul { position: absolute; right: 0; top: 100%; z-index: 2; min-width: 10rem; margin: 0; padding: var(--space-1); list-style: none; border: 1px solid var(--color-rule); border-radius: 0.5rem; background: var(--color-paper); box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.08); }
+.nav-menu a { display: block; padding: 0.625rem; text-decoration: none; }
+.nav-menu a:hover, .nav-menu a[aria-current="page"] { text-decoration: underline; }
+.button { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--space-1); padding: 0.875rem 1.25rem; border: 1px solid var(--color-accent); border-radius: 0.5rem; color: var(--color-paper); background: var(--color-accent); font-weight: 600; text-decoration: none; }
+.button:hover { text-decoration: underline; }
+.button-small { padding: 0.5rem 0.875rem; }
+.button-secondary { color: var(--color-accent); background: transparent; border-color: var(--color-rule); }
+.action-note { font-size: 0.75rem; font-weight: 400; }
+main { padding-block: var(--space-6); }
+h1, h2, h3 { margin: 0 0 var(--space-2); font-family: var(--font-heading); line-height: 1.2; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 6vw, 3.25rem); }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.375rem; }
+p { margin: 0 0 var(--space-2); }
+p:last-child { margin-bottom: 0; }
+.section-label { margin-bottom: var(--space-2); color: var(--color-muted); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.lead { font-size: 1.125rem; }
+.page-intro { margin-bottom: var(--space-4); padding-bottom: var(--space-4); border-bottom: 1px solid var(--color-rule); }
+/* Supporting content retains the shared reading width and heading hierarchy. */
+.resource-page > section + section { margin-top: var(--space-5); }
+.resource-page h3 { margin-top: var(--space-3); }
+.resource-page ul { margin-block: var(--space-2); padding-left: var(--space-3); }
+.resource-page li + li { margin-top: var(--space-1); }
+/* Product presentation stays wider than the supporting pages. Serif type is
+   reserved for the product name; interface and feature headings use sans-serif. */
+.home-page main { padding-top: var(--space-5); }
+.hero { max-width: 48rem; margin-inline: auto; padding-block: var(--space-4) var(--space-5); text-align: center; }
+.app-icon { display: block; width: 5rem; height: auto; margin: 0 auto var(--space-3); }
+.hero h1 { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); }
+.hero h1 span { display: block; margin-top: var(--space-2); font-family: var(--font-body); font-size: clamp(2rem, 4.5vw, 3.25rem); font-weight: 650; letter-spacing: -0.04em; line-height: 1.1; }
+.hero-description { max-width: 36rem; margin: var(--space-3) auto; color: var(--color-muted); font-size: 1.125rem; }
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+[hidden] { display: none !important; }
+.carousel-presentation { margin: 0; }
+.carousel-stage { position: relative; }
+/* All supplied screenshots are 1920 × 1080. Intrinsic dimensions and automatic
+   height preserve their 16:9 proportions without a separate letterboxed frame. */
+.carousel-slide img { display: block; width: 100%; height: auto; border: 1px solid var(--color-rule); border-radius: 0.625rem; box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.06); }
+.carousel-caption { min-height: 3.5em; margin-top: var(--space-1); text-align: center; color: var(--color-muted); font-size: 0.875rem; }
+.carousel-caption strong { color: var(--color-ink); font-weight: 600; }
+.carousel-controls { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding-inline: clamp(0.5rem, 2vw, 1.5rem); pointer-events: none; }
+/* Opaque system-palette surfaces keep chevrons readable over every screenshot.
+   An inset focus outline remains visible against either light or dark imagery. */
+.carousel-controls button { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 1px solid var(--color-muted); border-radius: 50%; background: var(--color-paper); color: var(--color-ink); box-shadow: 0 2px 8px rgb(0 0 0 / 0.25); cursor: pointer; pointer-events: auto; }
+.carousel-controls button:hover { color: var(--color-accent); border-color: var(--color-accent); }
+.carousel-controls button:focus-visible { outline-offset: -5px; }
+.carousel-controls svg { width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.carousel-pagination { display: flex; justify-content: center; margin-top: var(--space-1); }
+.carousel-pagination button { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+.carousel-pagination button span { width: 0.625rem; height: 0.625rem; border: 1px solid var(--color-accent); border-radius: 50%; }
+.carousel-pagination button[aria-pressed="true"] span { background: var(--color-accent); }
+.carousel-pagination button:hover span { border-width: 2px; }
+.carousel-help { margin-top: var(--space-2); text-align: center; font-size: 0.75rem; color: var(--color-muted); }
+.screenshot-fallback a { display: inline-block; margin: 0.25rem 0.5rem; }
+.features { padding-block: var(--space-6); }
+.features h2 { max-width: 34rem; font-family: var(--font-body); font-size: clamp(1.75rem, 3vw, 2.25rem); letter-spacing: -0.025em; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5) var(--space-4); margin: var(--space-4) 0 0; padding: 0; list-style: none; }
+.feature-grid h3 { font-family: var(--font-body); font-size: 1.0625rem; font-weight: 650; margin-bottom: var(--space-1); }
+.feature-grid p { color: var(--color-muted); font-size: 0.9375rem; }
+.local-note { margin-top: var(--space-5); color: var(--color-muted); font-size: 0.875rem; }
+.availability { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5); padding-block: var(--space-5); border-top: 1px solid var(--color-rule); }
+.availability h3 { font-family: var(--font-body); font-size: 1.25rem; }
+.availability p:not(.section-label) { color: var(--color-muted); font-size: 0.9375rem; }
+.availability section { scroll-margin-top: var(--space-3); }
+.site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-2); padding-block: var(--space-3); border-top: 1px solid var(--color-rule); color: var(--color-muted); font-size: 0.8125rem; }
+.site-footer p { margin: 0; }
+.site-footer nav { display: flex; gap: var(--space-3); }
+@media (max-width: 52rem) {
+    .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 36rem) {
+    :root { --page-gutter: 1.25rem; }
+    main { padding-block: var(--space-5); }
+    .site-header { flex-wrap: wrap; }
+    .primary-nav { gap: var(--space-2); margin-left: auto; }
+    .hero { padding-top: var(--space-2); }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .feature-grid, .availability { grid-template-columns: 1fr; gap: var(--space-4); }
+    .carousel-caption { min-height: 5em; }
+}
+/* The carousel never animates or rotates automatically; scrolling stays immediate. */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

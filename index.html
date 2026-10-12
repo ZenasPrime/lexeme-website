@@ -3,15 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Lexeme is a focused, native Markdown editor for macOS. Write in Source or Split mode, read in Rich mode, and customize your writing environment.">
     <title>Lexeme — Markdown Editor for macOS</title>
-    <meta name="description"
-          content="Lexeme is a native Markdown editor for macOS.">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <script src="assets/js/carousel.js" defer></script>
 </head>
-<body>
-    <main>
-        <h1>Lexeme</h1>
-        <p>A native Markdown editor for macOS.</p>
-        <p>Website coming soon.</p>
+<body class="home-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wide-width">
+        <a class="brand" href="./" aria-label="Lexeme home">
+            <img src="./assets/images/lexeme-icon.png" width="1024" height="1024" alt="" decoding="async">
+            <span>Lexeme</span>
+        </a>
+        <nav class="primary-nav" aria-label="Primary navigation">
+            <a class="button button-small" href="./#download">Download</a>
+            <a href="./#github">GitHub</a>
+            <details class="nav-menu">
+                <summary>More <span aria-hidden="true">⌄</span></summary>
+                <ul>
+                    <li><a href="./support/">Support</a></li>
+                    <li><a href="./privacy/">Privacy</a></li>
+                </ul>
+            </details>
+        </nav>
+    </header>
+    <main id="main" class="wide-width" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
+            <img class="app-icon" src="assets/images/lexeme-icon.png" width="1024" height="1024" alt="Lexeme app icon" decoding="async">
+            <p class="section-label">Lexeme 1.0 · Native to macOS</p>
+            <h1 id="hero-title">Lexeme<span>Markdown. Room to focus.</span></h1>
+            <p class="hero-description">A focused Markdown editor with a native Mac feel. Write in source, preview as you go, and read without distractions.</p>
+            <div class="hero-actions">
+                <a class="button" href="#download">Mac App Store <span class="action-note">Coming soon</span></a>
+                <a class="button button-secondary" href="#github">GitHub <span class="action-note">Future edition</span></a>
+            </div>
+        </section>
+        <section class="screenshot-section" aria-labelledby="screenshots-title">
+            <h2 id="screenshots-title" class="visually-hidden">Inside Lexeme</h2>
+            <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Lexeme screenshots" data-carousel>
+                <figure class="carousel-presentation">
+                    <div class="carousel-stage">
+                        <div class="carousel-slide" data-title="Split Light" data-caption="Write Markdown alongside a live rendered preview in light appearance.">
+                            <img src="assets/images/screenshots/split-light.png" width="1920" height="1080" alt="Lexeme in light appearance, with editable Markdown on the left and a rendered preview on the right." fetchpriority="high" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-title="Split Dark" data-caption="The same side-by-side workflow in dark appearance." hidden>
+                            <img src="assets/images/screenshots/split-dark.png" width="1920" height="1080" alt="Lexeme in dark appearance, with Markdown source and its rendered preview side by side." loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-title="Source" data-caption="Edit Markdown directly with syntax highlighting." hidden>
+                            <img src="assets/images/screenshots/source.png" width="1920" height="1080" alt="Lexeme Source mode displaying syntax-highlighted headings, links, lists, and inline code." loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-title="Rich" data-caption="Read rendered Markdown in a read-only view." hidden>
+                            <img src="assets/images/screenshots/rich.png" width="1920" height="1080" alt="Lexeme Rich mode displaying a rendered Markdown document with headings, links, and lists." loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-title="Markdown Menu" data-caption="Use native formatting commands and keyboard shortcuts." hidden>
+                            <img src="assets/images/screenshots/markdown-menu.png" width="1920" height="1080" alt="Lexeme’s Markdown menu open to heading commands, with formatting shortcuts and a Split document visible." loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide" data-title="Settings" data-caption="Choose themes, fonts, and typography for writing and reading." hidden>
+                            <img src="assets/images/screenshots/settings.png" width="1920" height="1080" alt="Lexeme Settings showing source font, theme, appearance, and rendered Markdown typography controls." loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-controls" hidden>
+                            <button type="button" data-previous aria-label="Previous screenshot"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m14 6-6 6 6 6"/></svg></button>
+                            <button type="button" data-next aria-label="Next screenshot"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m10 6 6 6-6 6"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="carousel-pagination" role="group" aria-label="Choose a screenshot" hidden>
+                        <button type="button" data-slide="0" aria-label="Show screenshot 1 of 6: Split Light" aria-pressed="true"><span aria-hidden="true"></span></button>
+                        <button type="button" data-slide="1" aria-label="Show screenshot 2 of 6: Split Dark" aria-pressed="false"><span aria-hidden="true"></span></button>
+                        <button type="button" data-slide="2" aria-label="Show screenshot 3 of 6: Source" aria-pressed="false"><span aria-hidden="true"></span></button>
+                        <button type="button" data-slide="3" aria-label="Show screenshot 4 of 6: Rich" aria-pressed="false"><span aria-hidden="true"></span></button>
+                        <button type="button" data-slide="4" aria-label="Show screenshot 5 of 6: Markdown Menu" aria-pressed="false"><span aria-hidden="true"></span></button>
+                        <button type="button" data-slide="5" aria-label="Show screenshot 6 of 6: Settings" aria-pressed="false"><span aria-hidden="true"></span></button>
+                    </div>
+                    <figcaption class="carousel-caption"><strong data-caption-title>Split Light</strong> — <span data-caption-text>Write Markdown alongside a live rendered preview in light appearance.</span></figcaption>
+                </figure>
+                <p class="carousel-position visually-hidden" role="status" aria-live="polite" aria-atomic="true">1 / 6 · Split Light</p>
+                <p class="carousel-help" hidden>Use the arrow keys to browse screenshots when the carousel is focused.</p>
+            </div>
+            <noscript><p class="screenshot-fallback">View screenshots: <a href="assets/images/screenshots/split-light.png">Split Light</a> <a href="assets/images/screenshots/split-dark.png">Split Dark</a> <a href="assets/images/screenshots/source.png">Source</a> <a href="assets/images/screenshots/rich.png">Rich</a> <a href="assets/images/screenshots/markdown-menu.png">Markdown Menu</a> <a href="assets/images/screenshots/settings.png">Settings</a></p></noscript>
+        </section>
+        <section class="features" aria-labelledby="features-title">
+            <p class="section-label">Made for Markdown</p>
+            <h2 id="features-title">Everything you need to stay with your words.</h2>
+            <ul class="feature-grid">
+                <li><h3>Source editing</h3><p>Write Markdown directly with syntax highlighting.</p></li>
+                <li><h3>Split preview</h3><p>See a live rendered preview alongside your source.</p></li>
+                <li><h3>Rich reading</h3><p>Read rendered Markdown in a read-only view.</p></li>
+                <li><h3>Native formatting</h3><p>Use Markdown commands and keyboard shortcuts.</p></li>
+                <li><h3>Your environment</h3><p>Customize themes, fonts, and typography.</p></li>
+                <li><h3>Standard documents</h3><p>Open and save Markdown files. Import plain text into new Markdown documents.</p></li>
+            </ul>
+            <p class="local-note">Local-first. No accounts, tracking, or analytics.</p>
+        </section>
+        <section class="availability" aria-labelledby="availability-title">
+            <h2 id="availability-title" class="visually-hidden">Availability</h2>
+            <!-- These are information destinations until public release URLs exist.
+                 Do not substitute placeholder external download links. -->
+            <section id="download" aria-labelledby="download-title">
+                <p class="section-label">For your Mac</p>
+                <h3 id="download-title">Mac App Store</h3>
+                <p>Lexeme 1.0 is intended for the Mac App Store. The listing is not yet public; a download link will be added here when it is available.</p>
+            </section>
+            <section id="github" aria-labelledby="github-title">
+                <p class="section-label">Looking ahead</p>
+                <h3 id="github-title">A future edition on GitHub</h3>
+                <p>This space is reserved for a future public C# edition of Lexeme. That edition is not available yet; a GitHub link will be added when there is a public destination.</p>
+            </section>
+        </section>
     </main>
+    <footer class="site-footer wide-width">
+        <p>Copyright © 2026 Zenas Prime. All rights reserved.</p>
+        <nav aria-label="Footer navigation"><a href="./support/">Support</a><a href="./privacy/">Privacy</a></nav>
+    </footer>
 </body>
 </html>
